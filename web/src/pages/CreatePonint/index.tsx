@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiCheckCircle, FiCheck } from 'react-icons/fi';
+import { FiArrowLeft, FiCheckCircle, FiPlus } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import {LeafletMouseEvent} from 'leaflet';
 import axios from 'axios';
@@ -164,25 +164,6 @@ const CreatePoint = () => {
 
   return (
     <div id="page-create-point">
-      <div id="modal" className="hide">
-        <div className="content">
-          <div className="header">
-            <FiCheckCircle />
-            <h1>Cadastro concluído!</h1>
-          </div>
-          <main>
-            <Link to="/">
-              <FiArrowLeft />
-              Voltar para a home
-            </Link>
-            <Link to="#" onClick={handleNewPoint}>
-              <FiCheck />
-              Cadastrar novo ponto
-              </Link>
-          </main>
-        </div>
-      </div>
-
       <header>
         <img src={logo} alt="Ecoleta"/>
         <Link to="/">
@@ -317,6 +298,25 @@ const CreatePoint = () => {
 
         <button type="submit">Cadastrar ponto de coleta</button>
       </form>
+
+      <div id="modal" className="hide">
+        <div className="content">
+          <div className="header">
+            <FiCheckCircle />
+            <h1>Cadastro concluído!</h1>
+          </div>
+          <main>
+            <Link to="/">
+              <FiArrowLeft />
+              Voltar para a home
+            </Link>
+            <Link to="#" onClick={handleNewPoint}>
+              <FiPlus />
+              Cadastrar novo ponto
+              </Link>
+          </main>
+        </div>
+      </div>
     </div>
   );
 }
